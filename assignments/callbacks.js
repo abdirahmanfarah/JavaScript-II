@@ -75,8 +75,15 @@ multiplyNums(25, 20, cb => {
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  return cb(item, list);
 }
-
+const trueFalse = function(item, list){
+  if(items.includes(item, list)){
+    return true;
+    return false;
+  }
+}
+console.log(contains("Gum", "", trueFalse));
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {

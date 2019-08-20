@@ -75,19 +75,42 @@ console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
+
 let runnersLargeSizeShirt = [];
+
+runnersLargeSizeShirt = runners.filter(function (item){
+    return item.shirt_size === 'L'  
+});
 console.log(runnersLargeSizeShirt);
 
-// ==== Challenge 4: Use .reduce() ====
-// The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
-let ticketPriceTotal = 0;
-console.log(ticketPriceTotal);
+// // ==== Challenge 4: Use .reduce() ====
+// // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
+ let ticketPriceTotal = 0;
+ const ticketPriceTotal = runners.reduce(function(accumulator, item){
+     return accumulator + item.donation;
+ }, 0);
+ console.log(ticketPriceTotal);
 
-// ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
+// // ==== Challenge 5: Be Creative ====
+// // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// // Problem 1
 
-// Problem 2
+const runnersSmallSizeShirt = runners.filter(function (item){
+  return item.shirt_size === "S"
+});
+console.log(runnersSmallSizeShirt);
+
+// // Problem 2
+
+const lastNameAllCaps = runners.map(function(item){
+  return item.last_name.toLowerCase()
+});
+console.log(lastNameAllCaps);
 
 // Problem 3
+ let backwardNames = [];
+ runners.forEach(function (item){
+   return backwardNames.push(`${item.last_name} ${item.first_name}`)
+ });
+ console.log(backwardNames);
