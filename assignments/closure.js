@@ -4,6 +4,14 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+let globalBananaTree = "banana";
+
+const tree = () => {
+  let fruitbasket = 'in a basket';
+  console.log(`${globalBananaTree} ${fruitbasket}`)
+}
+tree();
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
